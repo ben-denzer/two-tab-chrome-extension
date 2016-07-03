@@ -6,6 +6,7 @@ let getAllUrls = (callback) => {
 
 let checkForTwoOpen = (arrayOfTabs, callback) => {
     let yahoo = /^https\:\/\/www\.yahoo\.com/;
+    let cms = /^https:\/\/cms\.apts247\.info\/cms/;
     let openTabs = arrayOfTabs.filter(a => yahoo.test(a.url));
     callback(openTabs.length);
 };
