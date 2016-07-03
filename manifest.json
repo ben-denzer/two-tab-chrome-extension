@@ -1,0 +1,28 @@
+{
+    "manifest_version": 2,
+    "name": "Apartments247 CMS Extension",
+    "version": "0.1",
+    "description": "Alerts you if you have 2 tabs open to the CMS",
+
+    "background": {
+        "persistent": false,
+        "scripts": ["logic.js"]
+    },
+
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "https://www.yahoo.com/*"
+    ],
+
+    "browser_action": {
+        "default_title": "Apartments247 CMS Extension",
+        "default_icon": "icon.png",
+        "default_popup": "popup.html"
+    },
+
+    "content_scripts": [{
+        "matches": ["https://www.yahoo.com/"],
+        "js": ["content_script.js"]
+    }]
+}
