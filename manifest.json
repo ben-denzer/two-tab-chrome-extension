@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Apartments247 CMS Extension",
-    "version": "0.1",
+    "version": "1.0",
     "description": "Alerts you if you have 2 tabs open to the CMS",
 
     "background": {
@@ -12,7 +12,7 @@
     "permissions": [
         "activeTab",
         "tabs",
-        "https://www.yahoo.com/*"
+        "https://cms.apts247.info/*"
     ],
 
     "browser_action": {
@@ -22,7 +22,7 @@
     },
 
     "content_scripts": [{
-        "matches": ["https://www.yahoo.com/"],
+        "matches": ["https://cms.apts247.info/*"],
         "js": ["content_script.js"]
     }]
 }
