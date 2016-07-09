@@ -4,6 +4,12 @@
     "version": "1.1.0",
     "description": "Alerts you if you have 2 tabs open to the same page",
 
+    "icons": {
+        "19": "img/icon19.png",
+        "48": "img/icon48.png",
+        "128": "img/icon128.png"
+    },
+
     "background": {
         "scripts": ["logic.js"]
     },
@@ -22,7 +28,7 @@
 
     "browser_action": {
         "default_title": "Two Tabs Open",
-        "default_icon": "icon.png",
+        "default_icon": "img/icon48.png",
         "default_popup": "popup.html"
     },
 
