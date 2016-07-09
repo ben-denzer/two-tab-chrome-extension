@@ -5,9 +5,11 @@ let getAllUrls = (callback) => {
 };
 
 let checkForTwoOpen = (arrayOfTabs, callback) => {
-    let cms = /^https:\/\/cms\.apts247/;
-    let openTabs = arrayOfTabs.filter(a => cms.test(a.url));
-    callback(openTabs.length);
+    chrome.storage.sync.get({targetPage: ''}, (res) => {
+        pageRegex = new RegExp(res.targetPage);
+        let openTabs = arrayOfTabs.filter(a => pageRegex.test(a.url));
+        callback(openTabs.length);
+    });
 };
 
 let sendError = () => {

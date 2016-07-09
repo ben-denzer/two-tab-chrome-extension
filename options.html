@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Options | Two Tabs Open</title>
+</head>
+<body>
+    <h1>Select Your Page</h1>
+
+    <p>Make sure that you only have one tab open to your page by entering the URL below. You can be as specific or general as you like. (Being less specific is probably a better option)</p>
+
+    <small>
+        Examples
+        <ul>
+            <li>https://github.com/ben-denzer/two-tab-chrome-extension - Specific Page</li>
+            <li>https://github.com/* - All pages at github</li>
+            <li>https://www.yahoo.com/* - Don't forget the 'www' if needed</li>
+        </ul>
+    </small>
+
+    <p>Currently Selected Page - <span id="status"></span></p>
+
+    <input id="targetPageInput" placeholder="Enter URL Here"><button id="submitURL">Submit</button>
+
+    <script src="options.js"></script>
+</body>
+</html>

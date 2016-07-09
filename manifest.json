@@ -1,28 +1,33 @@
 {
     "manifest_version": 2,
-    "name": "Apartments247 CMS Extension",
-    "version": "1.0",
-    "description": "Alerts you if you have 2 tabs open to the CMS",
+    "name": "Two Tabs Open",
+    "version": "1.1.0",
+    "description": "Alerts you if you have 2 tabs open to the same page",
 
     "background": {
-        "persistent": false,
         "scripts": ["logic.js"]
+    },
+
+    "options_ui": {
+        "page": "options.html",
+        "chrome_style": true
     },
 
     "permissions": [
         "activeTab",
         "tabs",
-        "https://cms.apts247.info/*"
+        "storage",
+        "*://*/*"
     ],
 
     "browser_action": {
-        "default_title": "Apartments247 CMS Extension",
+        "default_title": "Two Tabs Open",
         "default_icon": "icon.png",
         "default_popup": "popup.html"
     },
 
     "content_scripts": [{
-        "matches": ["https://cms.apts247.info/*"],
+        "matches": ["*://*/*"],
         "js": ["content_script.js"]
     }]
 }

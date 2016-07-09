@@ -3,12 +3,19 @@ window.onload = () => {
 }
 
 chrome.runtime.onMessage.addListener((req) => {
-    if (req.number || req.number === 0) {
-        let status = document.getElementById('status');
-        req.number <= 1 ?
-            req.number === 1 ?
-                status.textContent = '1 CMS tab open' :
-                status.textContent = 'No CMS tabs open' :
-            status.textContent = 'STOP - 2 OR MORE CMS TABS OPEN';
-    }
+    chrome.storage.sync.get({targetPage: null}, (res) => {
+        if (res.targetPage) {
+            if (req.number || req.number === 0) {
+                let status = document.getElementById('status');
+                req.number <= 1 ?
+                    req.number === 1 ?
+                        status.textContent = '1 tab open to ' + res.targetPage :
+                        status.textContent = 'No tabs open to ' + res.targetPage :
+                    status.textContent = 'STOP - 2 OR MORE TABS OPEN TO ' + res.targetPage;
+            }
+        }
+        else {
+            status.textContent = 'No Page Selected, Go to "More Tools" -> "Extensions", then click on the "options" link of the Two Tabs Open extension'
+        }
+    });
 });
